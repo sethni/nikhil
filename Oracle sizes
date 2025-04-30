@@ -1,0 +1,28 @@
+SELECT pdb.name AS pdb_name,
+       ROUND(SUM(ts.bytes) / 1024 / 1024 / 1024, 2) AS size_in_gb
+FROM   cdb_data_files ts
+JOIN   v$pdbs pdb ON ts.con_id = pdb.con_id
+GROUP  BY pdb.name;
+
+
+SELECT pdb.name AS pdb_name,
+       df.file_name
+FROM   cdb_data_files df
+JOIN   v$pdbs pdb ON df.con_id = pdb.con_id
+ORDER  BY pdb.name;
+
+SELECT pdb.name AS pdb_name,
+       rs.consumer_group,
+       rs.utilization_limit
+FROM   cdb_rsrc_plan_directives rs
+JOIN   v$pdbs pdb ON rs.pluggable_database = pdb.name
+WHERE  rs.plan = 'DEFAULT_PLAN';  -- or your custom plan
+
+SELECT p.name AS pdb_name,
+       SUM(s.value) / 1024 / 1024 AS memory_mb
+FROM   v$sesstat s
+JOIN   v$statname n ON s.statistic# = n.statistic#
+JOIN   v$session sess ON s.sid = sess.sid
+JOIN   v$pdbs p ON sess.con_id = p.con_id
+WHERE  n.name = 'session pga memory'
+GROUP  BY p.name;
