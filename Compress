@@ -1,3 +1,38 @@
+SELECT RAWTOHEX(DBMS_LOB.SUBSTR(contents, 16, 1)) 
+FROM wbs_document_streams 
+WHERE document_stream_id = '7932931972880951969';
+
+-- Instead of writing binary, try converting to CLOB for inspection:
+DECLARE
+    l_clob   CLOB;
+    l_blob   BLOB;
+    l_dest_offset INTEGER := 1;
+    l_src_offset  INTEGER := 1;
+    l_lang_ctx    INTEGER := DBMS_LOB.default_lang_ctx;
+    l_warning     INTEGER;
+BEGIN
+    SELECT contents INTO l_blob 
+    FROM wbs_document_streams 
+    WHERE document_stream_id = '7932931972880951969';
+
+    DBMS_LOB.createtemporary(l_clob, TRUE);
+
+    DBMS_LOB.CONVERTTOCLOB (
+        dest_lob     => l_clob,
+        src_blob     => l_blob,
+        amount       => DBMS_LOB.LOBMAXSIZE,
+        dest_offset  => l_dest_offset,
+        src_offset   => l_src_offset,
+        blob_csid    => DBMS_LOB.default_csid,
+        lang_context => l_lang_ctx,
+        warning      => l_warning
+    );
+
+    DBMS_OUTPUT.PUT_LINE(DBMS_LOB.SUBSTR(l_clob, 1000, 1));
+END;
+
+
+
 
 import gzip
 
