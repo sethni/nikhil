@@ -1,3 +1,47 @@
+DECLARE
+    l_file      UTL_FILE.FILE_TYPE;
+    l_buffer    RAW(32767);
+    l_amount    BINARY_INTEGER := 32767;
+    l_pos       INTEGER := 1;
+    l_blob      BLOB;
+    l_blob_len  INTEGER;
+BEGIN
+    SELECT contents INTO l_blob
+    FROM wbs_document_streams
+    WHERE document_stream_id = '7932931972880951969';
+
+    l_blob_len := DBMS_LOB.getlength(l_blob);
+    l_file := UTL_FILE.fopen('EXPORT_DIR', 'TEST11.gz', 'wb', 32767);
+
+    WHILE l_pos <= l_blob_len LOOP
+        DBMS_LOB.read(l_blob, l_amount, l_pos, l_buffer);
+        UTL_FILE.put_raw(l_file, l_buffer, TRUE);
+        l_pos := l_pos + l_amount;
+    END LOOP;
+
+    UTL_FILE.fclose(l_file);
+END;
+
+
+import gzip
+
+with open("TEST11.gz", "rb") as f_in:
+    with gzip.open(f_in, "rb") as gz:
+        data = gz.read()
+
+    with open("TEST11.pdf", "wb") as f_out:
+        f_out.write(data)
+
+print("✅ Decompression successful! PDF saved as TEST11.pdf")
+
+
+
+
+
+
+
+
+
 SELECT RAWTOHEX(DBMS_LOB.SUBSTR(contents, 16, 1)) 
 FROM wbs_document_streams 
 WHERE document_stream_id = '7932931972880951969';
