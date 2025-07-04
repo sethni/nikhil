@@ -1,3 +1,16 @@
+
+import gzip
+
+with open("TEST11.bin", "rb") as f_in:
+    try:
+        with gzip.open(f_in, "rb") as gz:
+            data = gz.read()
+        with open("TEST11_fixed.pdf", "wb") as f_out:
+            f_out.write(data)
+        print("Decompression successful. Saved as TEST11_fixed.pdf")
+    except Exception as e:
+        print("Not a valid gzip file or decompression failed:", e)
+
 SELECT UTL_RAW.cast_to_varchar2(DBMS_LOB.SUBSTR(contents, 10, 1))
 FROM wbs_document_streams
 WHERE document_stream_id = '7932931972880951969';
