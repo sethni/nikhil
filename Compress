@@ -1,3 +1,8 @@
+SELECT UTL_RAW.cast_to_varchar2(DBMS_LOB.SUBSTR(contents, 10, 1))
+FROM wbs_document_streams
+WHERE document_stream_id = '7932931972880951969';
+
+
 DECLARE
     l_file       UTL_FILE.FILE_TYPE;
     l_buffer     RAW(32767);
