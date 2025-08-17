@@ -18,3 +18,7 @@ FROM   v$session
 WHERE  status = 'ACTIVE'
 AND    username IS NOT NULL
 ORDER BY logon_time DESC;
+
+SELECT COUNT(*) AS rows_today
+FROM rpmopen.<table_name>
+WHERE TRUNC(created_date) = TRUNC(SYSDATE);
