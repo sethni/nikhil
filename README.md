@@ -1,5 +1,15 @@
 # nikhil
 
+alter session set NLS_DATE_FORMAT='DD-MON-YYYY HH24:mi:ss';
+set lines 333
+col TABLE_OWNER for a30
+col TABLE_NAME for a30
+SELECT TABLE_OWNER,TABLE_NAME,TIMESTAMP AS LAST_CHANGE
+FROM DBA_TAB_MODIFICATIONS
+where table_owner not like 'SYS%' and TIMESTAMP like '%SEP%25%' order by 3 ;
+
+
+
 SELECT s.sid,
        s.serial#,
        s.username,
