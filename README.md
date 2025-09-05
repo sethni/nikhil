@@ -1,4 +1,22 @@
 # nikhil
+
+SELECT s.sid,
+       s.serial#,
+       s.username,
+       s.machine,
+       s.status,
+       TO_CHAR(s.sql_exec_start, 'YYYY-MM-DD HH24:MI:SS') AS sql_start_time,
+       q.sql_text
+FROM   v$session s
+JOIN   v$sql q
+ON     s.sql_id = q.sql_id
+WHERE  s.username IS NOT NULL
+  AND  s.status = 'ACTIVE'
+ORDER BY s.sql_exec_start DESC;
+
+
+
+
 html
 grep "ORA-01017" $ORACLE_HOME/diag/tnslsnr/*/trace/listener.log
 
