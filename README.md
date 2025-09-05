@@ -5,6 +5,22 @@ SELECT s.sid,
        s.username,
        s.machine,
        s.status,
+       TO_CHAR(s.logon_time, 'YYYY-MM-DD HH24:MI:SS') AS logon_time,
+       TO_CHAR(s.sql_exec_start, 'YYYY-MM-DD HH24:MI:SS') AS sql_exec_start
+FROM   v$session s
+WHERE  s.username IS NOT NULL
+ORDER BY s.machine, s.status, s.logon_time DESC;
+
+
+
+
+
+
+SELECT s.sid,
+       s.serial#,
+       s.username,
+       s.machine,
+       s.status,
        TO_CHAR(s.sql_exec_start, 'YYYY-MM-DD HH24:MI:SS') AS sql_start_time,
        q.sql_text
 FROM   v$session s
