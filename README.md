@@ -1,3 +1,18 @@
+
+Hello Kapil,
+
+We encountered an issue where our export dump file was lost on the ACTS server for the below host details on Friday, September 26th. As you advised, we raised an incident with EITo and also engaged the Data Protection team.
+
+The Storage team has confirmed that there were no backups configured on Commvault or TSM; however, they have not yet confirmed the status of DDBoost. Since this data is critical for the business, could you please advise if there are any possible workarounds?
+
+We also reached out to Teddy Glenn, and he confirmed that there is no configuration on Commvault.
+
+Your guidance on next steps would be greatly appreciated.
+
+Thank you,
+[Your Name]
+
+
 # nikhil
 
 alter session set NLS_DATE_FORMAT='DD-MON-YYYY HH24:mi:ss';
