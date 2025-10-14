@@ -1,19 +1,25 @@
+Imran
+	•	September was a productive month with an average of 6–7 working hours per day.
+	•	Proactively acknowledged team members’ messages on Teams.
+	•	Maintained good rapport with both customers and team members.
+	•	TD trainings are currently on hold; coordinating with TD HR to resume them.
+	•	Continue to stay active and available on Teams — Imran acknowledged.
 
-Hello Kapil,
+⸻
 
-We encountered an issue where our export dump file was lost on the ACTS server for the below host details on Friday, September 26th. As you advised, we raised an incident with EITo and also engaged the Data Protection team.
+Rahul
+	•	Fully occupied with work and utilized spare time for training and conducting KT sessions for the offshore team.
+	•	Proactively acknowledged team members’ updates on Teams.
+	•	Averaged 6–7 productive hours per day.
+	•	Continue to stay active and available on Teams — Rahul acknowledged.
 
-The Storage team has confirmed that there were no backups configured on Commvault or TSM; however, they have not yet confirmed the status of DDBoost. Since this data is critical for the business, could you please advise if there are any possible workarounds?
+⸻
 
-We also reached out to Teddy Glenn, and he confirmed that there is no configuration on Commvault.
+Nishant
+	•	September had relatively less workload, averaging 6–7 productive hours per day, with 3 days off.
+	•	Always proactive in responding to team members on Teams.
+	•	Continue to stay active and available on Teams — Nishant acknowledged.
 
-Your guidance on next steps would be greatly appreciated.
-
-Thank you,
-[Your Name]
-
-
-# nikhil
 
 alter session set NLS_DATE_FORMAT='DD-MON-YYYY HH24:mi:ss';
 set lines 333
