@@ -1,3 +1,31 @@
+
+Summary:
+Imran has demonstrated gaps in core Oracle DBA skills, technical knowledge, and due diligence. Multiple complaints and production issues have been reported over recent weeks, indicating insufficient understanding of critical database administration practices. Despite prior feedback and support, expected improvements have not been observed. This PIP aims to provide a final opportunity for Imran to show measurable progress and meet performance expectations.
+
+⸻
+
+Key Focus Areas (Bulk Points)
+	•	Strengthen Oracle DBA fundamentals and troubleshooting proficiency.
+	•	Improve production incident handling and root cause analysis.
+	•	Demonstrate consistent due diligence in technical changes and deployment activities.
+	•	Enhance documentation quality and adherence to operational standards.
+	•	Communicate effectively and escalate risks or blockers in a timely manner.
+	•	Participate actively in team discussions and technical reviews.
+	•	Complete assigned action items within agreed timelines.
+	•	Attend mentoring sessions and technical workshops as scheduled.
+	•	Show measurable reduction in recurring production issues.
+	•	Maintain a professional and accountable approach toward deliverables.
+
+
+
+	------
+
+
+
+
+
+
+
 Imran
 	•	September was a productive month with an average of 6–7 working hours per day.
 	•	Proactively acknowledged team members’ messages on Teams.
