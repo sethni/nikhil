@@ -1,3 +1,96 @@
+SELECT
+    t.tablespace_name,
+    d.file_name,
+    d.bytes / 1024 / 1024 AS file_size_mb,
+    d.maxbytes / 1024 / 1024 AS max_size_mb,
+    t.status
+FROM
+    dba_data_files d
+JOIN
+    dba_tablespaces t ON d.tablespace_name = t.tablespace_name
+ORDER BY
+    t.tablespace_name, d.file_name;
+
+SELECT
+    group#,
+    status,
+    members,
+    bytes / 1024 / 1024 AS size_mb,
+    archived,
+    member AS file_path
+FROM
+    v$logfile
+ORDER BY
+    group#, member;
+
+
+SELECT
+    name AS controlfile_path
+FROM
+    v$controlfile;
+
+
+SELECT
+    value
+FROM
+    v$osstat
+WHERE
+    stat_name = 'NUM_CPUS';
+
+
+SELECT
+    round(value / 1024 / 1024 / 1024, 2) AS total_physical_memory_gb
+FROM
+    v$osstat
+WHERE
+    stat_name = 'PHYSICAL_MEMORY_BYTES';
+
+
+SELECT
+    name,
+    value,
+    display_value,
+    description
+FROM
+    v$parameter
+WHERE
+    name IN ('sga_target', 'pga_aggregate_target', 'memory_target')
+ORDER BY
+    name;
+SELECT
+    name,
+    value,
+    display_value,
+    description
+FROM
+    v$parameter
+WHERE
+    name IN ('sga_target', 'pga_aggregate_target', 'memory_target')
+ORDER BY
+    name;
+
+
+SELECT
+    host_name,
+    version
+FROM
+    v$instance;
+
+-- Additional OS info from the database banner
+SELECT
+    banner
+FROM
+    v$version
+WHERE
+    banner LIKE 'TNS for%';
+
+	
+
+
+
+
+
+
 Business Benefit:
 
 The AWS Oracle migration project successfully transitioned multiple interdependent legacy applications to the new Oracle Cloud@Customer (OCAC) environment. Applications were migrated from VMC1 to VMC2 with improved performance, scalability, and resilience. The modernization reduced infrastructure overhead, enhanced operational efficiency, and supported future cloud integration.
