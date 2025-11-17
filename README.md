@@ -1,3 +1,18 @@
+SET LINESIZE 200
+COL JOB_NAME FORMAT A25
+COL JOB_ACTION FORMAT A80
+
+SELECT
+    JOB_NAME,
+    JOB_ACTION
+FROM
+    DBA_SCHEDULER_JOBS
+WHERE
+    JOB_ACTION LIKE '%rman%'
+    AND OWNER != 'SYS';
+
+
+
 SELECT
     t.tablespace_name,
     d.file_name,
