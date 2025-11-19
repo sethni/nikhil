@@ -1,3 +1,21 @@
+set lines 300;
+set pages 250;
+
+select a.inst_id,
+       a.name "Database Name",
+       c.instance_name,
+       c.host_name,
+       version "DB Version",
+       a.open_mode,
+       to_char(c.startup_time,'mm/dd/yy hh24:mi') "Start Time",
+       to_char(sysdate,'DD-MON-YYYY HH24:MI') "System Date",
+       c.instance_role
+  from gv$database a, gv$instance c
+ where a.inst_id = c.inst_id
+ order by a.inst_id;
+
+
+
 SET LINESIZE 200
 COL JOB_NAME FORMAT A25
 COL JOB_ACTION FORMAT A80
