@@ -1,3 +1,14 @@
+
+
+Directives
+Vacation Leave Planning: Submit vacation leave requests with 60 days of advance notice.
+Overtime Reconciliation: Ensure all overtime hours are accurately recorded and reconciled with zero discrepancies.
+Mandatory Training Completion: Complete all outstanding Talent Development (TD) and TCS mandatory trainings.
+Time and Leave Management Adherence: Strictly adhere to the process for submitting timesheets and applying for leave (including accurate forecasting of hours).
+Team Engagement & Visibility: Maintain strong team communication and collaboration, and ensure active participation and presence in all customer meetings.
+Return to Office (RTO): The mandatory 2-day per week Return to Office requirement remains in effect until the end of February.
+Would you like me to focus on explaining any one of these points in more detail?
+
 set lines 300;
 set pages 250;
 
