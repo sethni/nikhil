@@ -1,4 +1,6 @@
 
+Our associate consistently performed well and demonstrated strong commitment throughout the project. The recent termination was solely due to the customer’s project ramp down, and not a reflection of his skills or contributions.”
+
 
 Directives
 Vacation Leave Planning: Submit vacation leave requests with 60 days of advance notice.
