@@ -1,3 +1,10 @@
+ wanted to take a moment to thank you for your constant support, trust, and guidance. It truly made a big difference and helped me grow throughout the year. I really appreciate the opportunities and confidence you’ve shown in me.
+
+Wishing you and your family a very Merry Christmas and a wonderful New Year filled with happiness, good health, and success.
+
+Thanks again for everything.
+
+
 
 Our associate consistently performed well and demonstrated strong commitment throughout the project. The recent termination was solely due to the customer’s project ramp down, and not a reflection of his skills or contributions.”
 
