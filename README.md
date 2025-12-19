@@ -1,3 +1,25 @@
+SELECT owner, table_name, tablespace_name
+FROM dba_tables
+WHERE tablespace_name IN ('SYSTEM', 'SYSAUX', 'UNDOTBS1', 'PDB_TEMP', 'UNDO-2')
+ORDER BY owner, tablespace_name;
+
+
+SELECT owner, segment_type, tablespace_name, count(*) as object_count
+FROM dba_segments
+WHERE tablespace_name IN ('SYSTEM', 'SYSAUX', 'UNDOTBS1', 'PDB_TEMP', 'UNDO-2')
+GROUP BY owner, segment_type, tablespace_name
+ORDER BY owner;
+
+
+ Tablespace Standard Purpose
+SYSTEM The "heart" of the DB. Stores the Data Dictionary and core metadata.
+SYSAUX Auxiliary storage for optional database components (e.g., AWR, Performance metrics).
+UNDOTBS1 / UNDO-2 Stores "Before" images of data for rollbacks and read consistency. Does not store permanent app data.
+PDB_TEMP Temporary workspace for sorting and joining data; cleared automatically.
+
+
+ 
+ 
  wanted to take a moment to thank you for your constant support, trust, and guidance. It truly made a big difference and helped me grow throughout the year. I really appreciate the opportunities and confidence you’ve shown in me.
 
 Wishing you and your family a very Merry Christmas and a wonderful New Year filled with happiness, good health, and success.
