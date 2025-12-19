@@ -1,3 +1,10 @@
+Evidence: If the OWNER column only shows internal names like SYS, SYSTEM, WMSYS, AUDSYS, etc., then no application data is present.
+Note: If you see any names related to your company's apps, those tables are in the "wrong" place and contain application data.
+
+
+A "segment" is any object that takes up actual disk space (tables, indexes, partitions). This query confirms that no custom user owns anything in those areas.
+
+
 SELECT owner, table_name, tablespace_name
 FROM dba_tables
 WHERE tablespace_name IN ('SYSTEM', 'SYSAUX', 'UNDOTBS1', 'PDB_TEMP', 'UNDO-2')
